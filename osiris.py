@@ -32,8 +32,8 @@ class TheNavigatorCommand(sublime_plugin.WindowCommand):
             return
         if(len(matches_from_index) == 1):
             model = matches_from_index[0]
-            self.window.open_file(model[2])
-            navigate(self.window.active_view(), model)
+            view = self.window.open_file(model[2])
+            navigate(view, model)
         elif(len(matches_from_index) > 1):
             self.show_matches(selected_word)
 
@@ -49,13 +49,18 @@ class TheNavigatorCommand(sublime_plugin.WindowCommand):
     def match_selected(self, match):
         global matches_from_index
         model = matches_from_index[match]
-        self.window.open_file(model[2])
-        navigate(self.window.active_view(), model)
+        view = self.window.open_file(model[2])
+        navigate(view, model)
 
 def navigate(view, model):
-    view.sel().clear()
-    view.sel().add(sublime.Region(model[0], model[0]))
-    view.show_at_center(model[0]) 
+    def navigate_after_load():
+        if(view.is_loading()):
+            sublime.set_timeout(navigate_after_load,10)
+            return
+        view.sel().clear()
+        view.sel().add(sublime.Region(model[0], model[0] + len(selected_word)))
+        view.show_at_center(model[0]) 
+    navigate_after_load()
 
 def getallfiles(dir, extn = ".r"):
     fs=[]
