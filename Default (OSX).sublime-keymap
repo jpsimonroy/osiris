@@ -1,0 +1,6 @@
+[
+	{
+		"keys":["shift+enter"],
+		"command":"the_navigator"
+	}
+]
