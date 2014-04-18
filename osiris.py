@@ -62,11 +62,12 @@ def navigate(view, model):
         view.show_at_center(model[0]) 
     navigate_after_load()
 
-def getallfiles(dir, extn = ".r"):
+def getallfiles(dir, extn = [".r", ".R"]):
     fs=[]
     for root, dirs, files in os.walk(dir):
         for file in files:
-            if file.endswith(extn):
+            _, ext = os.path.splitext(file)
+            if ext in extn:
                 fs.append(os.path.join(root, file))
     return fs
 
