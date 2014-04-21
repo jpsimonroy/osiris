@@ -12,7 +12,6 @@ page_index={}
 class Reindexer(sublime_plugin.EventListener): 
     def on_post_save(self, view):  
         global index
-        print("Rebuilding index")
         index.clear()
         fs=getallfiles(cwd_for_window(sublime.active_window()))
         for f in fs:
@@ -29,7 +28,6 @@ class FileNavigatorCommand(sublime_plugin.WindowCommand):
         for key in page_index:
             for match in page_index[key]:
                 matches_from_index.append(match)
-        print(matches_from_index)
         show_matches()
 
 class TheNavigatorCommand(sublime_plugin.WindowCommand):
@@ -76,7 +74,7 @@ def navigate(view, model):
             sublime.set_timeout(navigate_after_load,10)
             return
         view.sel().clear()
-        view.sel().add(sublime.Region(model[1], model[1] + len(selected_word)))
+        view.sel().add(sublime.Region(model[1], model[1] + len(model[0])))
         view.show_at_center(model[1])
     navigate_after_load()
 
