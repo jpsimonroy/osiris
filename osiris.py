@@ -48,6 +48,8 @@ class TheNavigatorCommand(sublime_plugin.WindowCommand):
 
     def match_selected(self, match):
         global matches_from_index
+        if match == -1:
+            return
         model = matches_from_index[match]
         view = self.window.open_file(model[2])
         navigate(view, model)
