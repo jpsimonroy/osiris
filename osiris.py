@@ -59,7 +59,7 @@ def navigate(view, model):
             return
         view.sel().clear()
         view.sel().add(sublime.Region(model[0], model[0] + len(selected_word)))
-        view.show_at_center(model[0]) 
+        view.show_at_center(model[0])
     navigate_after_load()
 
 def getallfiles(dir, extn = [".r", ".R"]):
@@ -79,4 +79,8 @@ def build_index(file):
     for match in re.finditer(search_pattern, text):
         index[match.group(1)] = index.get(match.group(1)) or []
         index[match.group(1)].append([match.start(),match.group(3),file])
+    file_name, ext = os.path.splitext(os.path.basename(file))
+    index[file_name] = index.get(file_name) or []
+    print(file_name)
+    index[file_name].append([0,'FILE',file])
     f.close()
