@@ -2,5 +2,8 @@
 	{
 		"keys":["shift+enter"],
 		"command":"the_navigator"
-	}
+	},{
+        "keys":["super+f12"],
+        "command":"file_navigator"
+    }
 ]
