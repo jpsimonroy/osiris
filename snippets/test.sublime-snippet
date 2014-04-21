@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+test_that('${1:it should $2}',{
+	$0
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>test</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.r</scope>
+</snippet>
