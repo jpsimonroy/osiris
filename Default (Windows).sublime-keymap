@@ -3,7 +3,10 @@
 		"keys":["shift+enter"],
 		"command":"the_navigator"
 	},{
-        "keys":["super+f12"],
+        "keys":["ctrl+f12"],
         "command":"file_navigator"
+    },{
+        "keys":["ctrl+alt+f7"],
+        "command":"usages"
     }
 ]

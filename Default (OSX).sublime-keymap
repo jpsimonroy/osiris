@@ -5,5 +5,8 @@
 	},{
         "keys":["super+f12"],
         "command":"file_navigator"
+    },{
+        "keys":["super+alt+f7"],
+        "command":"usages"
     }
 ]
