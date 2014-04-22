@@ -30,6 +30,18 @@ test_that('it should ',{
 });
 ```
 
+***class*** expands to test_that
+```javascript
+|=setRefClass('|',
+    contains=c(''),
+    fields=list(),
+    methods=list(
+        init=function(){
+            
+        }
+    )
+);
+```
 Like this? You may be interested in the following too.
 * [Rmake](https://github.com/jpsimonroy/rmake) - Bundler for R
 * [Donatello](https://github.com/jpsimonroy/donatello) - IDE support for running tests. Needs Custom project structure.
