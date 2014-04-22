@@ -4,28 +4,29 @@ Osiris
 Code Navigation in R
 ---------------------
 
-### SHIFT + ENTER 
->>> *** Navigate to declaration. *** If multiple matches are found, the list is presented in a UI widget so that the appropriate can be selected and navigated to. The 'ESC' key from the widget dismisses the widget and cancels navigation. Shift enter on a source defn i.e source("something.r") with attempt to navigate to the file "something.r"
+#### :one: SHIFT + ENTER 
 
-### CMD + SHIFT + F7 
->>> *** Show Usages. *** This finds usages of the selection or the word at the cursor in the entire project. If multiple matches are found, a widget is shown from which one can select the desired usage to navigate to.
+***Navigate to declaration.*** If multiple matches are found, the list is presented in a UI widget so that the appropriate can be selected and navigated to. The `ESC` key from the widget dismisses the widget and cancels navigation. Shift enter on a source defn i.e `source("something.r")` with attempt to navigate to the file `something.r`  
 
-### CMD + F12
->>> *** Show methods in file.*** Shows all method declarations in the currently active file. Select from the list to navigate to the declaration in file.
+#### :two: CMD + SHIFT + F7 
+***Show Usages.*** This finds usages of the selection or the word at the cursor in the entire project. If multiple matches are found, a widget is shown from which one can select the desired usage to navigate to.
 
+#### :three: CMD + F12
+***Show methods in file.*** Shows all method declarations in the currently active file. Select from the list to navigate to the declaration in file.
+
+***
 Snippets
 ---------
->>> *** mcl *** expands to mclapply 
 
-```R
+***mcl*** expands to mclapply 
+```javascript
 mclapply(range,function(x) {});
 ```
 
->>> ***test *** expands to test_that
-
-```R
+***test*** expands to test_that
+```javascript
 test_that('it should ',{
-    
+    |
 });
 ```
 
