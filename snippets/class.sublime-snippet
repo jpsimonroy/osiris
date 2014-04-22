@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+${1}=setRefClass('${1}',
+    contains=c('${2}'),
+    fields=list(${3}),
+    methods=list(
+        init=function($4){
+            $0
+        }
+    )
+);
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>class</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.r</scope>
+</snippet>
