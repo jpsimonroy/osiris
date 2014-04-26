@@ -26,3 +26,10 @@ def cwd_for_window(window):
                 return folder
         return os.path.dirname(active_file_name)
 
+def settings():
+    return sublime.load_settings('osiris.sublime-settings')
+
+def save_settings():
+    return sublime.save_settings('osiris.sublime-settings')
+
+

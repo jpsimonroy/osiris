@@ -132,11 +132,12 @@ def navigate(view, model):
     navigate_after_load()
 
 def getallfiles(dir, extn = [".r", ".R"]):
+    file_exlusions = settings().get("index_ignore_pattern")
     fs=[]
     for root, dirs, files in os.walk(dir):
         for file in files:
-            _, ext = os.path.splitext(file)
-            if ext in extn:
+            name, ext = os.path.splitext(file)
+            if (ext in extn) and ((file_exlusions == None) or (re.match(file_exlusions, name) == None)):
                 fs.append(os.path.join(root, file))
     return fs
 
