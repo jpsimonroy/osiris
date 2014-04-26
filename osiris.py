@@ -179,13 +179,6 @@ def index_test(file, index):
     return index
     
 def context_for_tests(context_locations, test_locations):
-    return_index = {}
-    if len(context_locations) == 0:
-        for test in test_locations:
-            return_index[''] = return_index.get('') or []
-            return_index.get('').append(['', test[1], test[2]])
-        return return_index
-
     def interpolator(test):
         for context in reversed(context_locations):
             if test[1] > context[1]:
