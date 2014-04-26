@@ -12,7 +12,7 @@ Code Navigation in R
 ***Show Usages.*** This finds usages of the selection or the word at the cursor in the entire project. If multiple matches are found, a widget is shown from which one can select the desired usage to navigate to.
 
 #### :three: CMD + F12
-***Show methods in file.*** Shows all method declarations in the currently active file. Select from the list to navigate to the declaration in file.
+***Show methods in file.*** Shows all method declarations in the currently active file. Select from the list to navigate to the declaration in file. If you are in a test file (test_that syntax), you would get to see all test methods and their contexts.
 
 ***
 Snippets
@@ -42,6 +42,21 @@ test_that('it should ',{
     )
 );
 ```
+
+***
+Controlling the indexer
+------------------------
+
+You can specify ignore patterns in the plugin settings file under Preferences -> Package Settings -> Orisris -> Settings - User
+
+```javascript
+{
+    "index_ignore_pattern": "_tmp_.*"
+}
+```
+
+Setting the above would exclude all files with the ignore pattern from the indexer and hence its contents would not feature in any of the above shortcuts.
+
 Like this? You may be interested in the following too.
 * [Rmake](https://github.com/jpsimonroy/rmake) - Bundler for R
 * [Donatello](https://github.com/jpsimonroy/donatello) - IDE support for running tests. Needs Custom project structure.
