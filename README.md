@@ -30,7 +30,7 @@ test_that('it should ',{
 });
 ```
 
-***class*** expands to test_that
+***class*** expands to R5 class def
 ```javascript
 |=setRefClass('|',
     contains=c(''),
