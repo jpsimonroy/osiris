@@ -8,7 +8,7 @@ Code Navigation in R
 
 ***Navigate to declaration.*** If multiple matches are found, the list is presented in a UI widget so that the appropriate can be selected and navigated to. The `ESC` key from the widget dismisses the widget and cancels navigation. Shift enter on a source defn i.e `source("something.r")` with attempt to navigate to the file `something.r`  
 
-#### :two: CMD + SHIFT + F7 
+#### :two: CMD + option + F7 
 ***Show Usages.*** This finds usages of the selection or the word at the cursor in the entire project. If multiple matches are found, a widget is shown from which one can select the desired usage to navigate to.
 
 #### :three: CMD + F12
